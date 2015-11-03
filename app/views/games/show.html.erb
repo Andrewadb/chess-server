@@ -1,0 +1,41 @@
+<%= render '/chessboard' %>
+
+<script>
+var board1 = ChessBoard('board1', "<%= @game.position %>");
+</script>
+
+<p>
+  <strong>Position:</strong>
+  <%= @game.position %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @game.text %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @game.result %>
+</p>
+
+<p>
+  <strong>White:</strong>
+  <%= @game.white %>
+</p>
+
+<p>
+  <strong>Black:</strong>
+  <%= @game.black %>
+</p>
+
+  <strong>White_user_id:</strong>
+  <%= @game.user_white_id %>
+</p>
+
+  <strong>Black_user_id:</strong>
+  <%= @game.user_black_id %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
