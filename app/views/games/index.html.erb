@@ -17,7 +17,8 @@
   </thead>
 
   <tbody>
-    <% @games.each do |game| %>
+
+    <% current_user.all_games.each do |game| %>
       <tr>
         <td><%= game.position %></td>
         <td><%= game.text %></td>
@@ -35,5 +36,7 @@
 </table>
 
 <br>
+
+
 
 <%= link_to 'New Game', new_game_path %>
