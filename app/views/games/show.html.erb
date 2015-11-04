@@ -32,13 +32,21 @@
   <strong>White_user_id:</strong>
   <%= @game.user_white_id %>
 </p>
-
+<p>
   <strong>Black_user_id:</strong>
   <%= @game.user_black_id %>
 </p>
-
+<p>
+  <strong>User color</strong>
+  <% if @game.user_white_id == current_user.id %>
+    white
+  <% else %>
+    black
+  <% end %>
+</p>
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
+<%= render 'form' %>
 
 <script>
 // ******************************************
@@ -47,13 +55,16 @@ var board,
   statusEl = $('#status'),
   fenEl = $('#fen'),
   pgnEl = $('#pgn');
+  usersTurn = true;
+  userColor = (<% if @game.user_white_id == current_user.id %>'w'<% else %>'b'<% end %>)
 
 // do not pick up pieces if the game is over
 // only pick up pieces for the side to move
 var onDragStart = function(source, piece, position, orientation) {
   if (game.game_over() === true ||
       (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-      (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
+      (game.turn() === 'b' && piece.search(/^w/) !== -1) ||
+      (game.turn() !== userColor) ){
     return false;
   }
 };
@@ -67,7 +78,9 @@ var onDrop = function(source, target) {
   });
 
   // illegal move
-  if (move === null) return 'snapback';
+  if (move === null){
+   return 'snapback';
+ } 
 
   updateStatus();
 };
@@ -76,9 +89,19 @@ var onDrop = function(source, target) {
 // for castling, en passant, pawn promotion
 var onSnapEnd = function() {
   board.position(game.fen());
+
+
   // *********
-  draggable: false;
+  // var cfg;
+  // cfg[draggable] = false;
+
 };
+
+var onChange = function() {
+
+}
+
+
 
 var updateStatus = function() {
   var status = '';
@@ -118,7 +141,9 @@ var cfg = {
   position: "<%= @game.position %>",
   onDragStart: onDragStart,
   onDrop: onDrop,
-  onSnapEnd: onSnapEnd
+  onSnapEnd: onSnapEnd,
+  onChange: onChange
+  
 };
 board = ChessBoard('board', cfg);
 
