@@ -56,7 +56,11 @@ var board,
   fenEl = $('#fen'),
   pgnEl = $('#pgn');
   usersTurn = true;
-  userColor = (<% if @game.user_white_id == current_user.id %>'w'<% else %>'b'<% end %>)
+  userColor = (<% if @game.user_white_id == current_user.id %>'w'<% else %>'b'<% end %>);
+  userColorFull = (<% if @game.user_white_id == current_user.id %>'white'<% else %>'black'<% end %>);
+
+  var fenField = document.getElementById("game_position");
+
 
 // do not pick up pieces if the game is over
 // only pick up pieces for the side to move
@@ -98,7 +102,7 @@ var onSnapEnd = function() {
 };
 
 var onChange = function() {
-
+fenField.value = game.fen();
 }
 
 
@@ -138,14 +142,17 @@ var updateStatus = function() {
 
 var cfg = {
   draggable: true,
+
   position: "<%= @game.position %>",
   onDragStart: onDragStart,
   onDrop: onDrop,
   onSnapEnd: onSnapEnd,
   onChange: onChange
+
   
 };
 board = ChessBoard('board', cfg);
+board.orientation(userColorFull);
 
 updateStatus();
 

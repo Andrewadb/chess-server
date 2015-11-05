@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  challenger: MyString
+  user_id: 
+  challenged: MyString
+  user_id: 
+
+two:
+  challenger: MyString
+  user_id: 
+  challenged: MyString
+  user_id: 
