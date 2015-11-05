@@ -45,5 +45,7 @@ group :development do
   gem 'spring'
   gem 'cowsay'
   gem 'puma'
+  gem 'rails_12factor'
+  ruby '2.2.3'
 end
 
