@@ -8,6 +8,16 @@
 </head>
 <body>
 
+    <header class="chess-head">
+  <div class="logo">
+  <%= image_tag("Chess-icon.png", size: "40") %>
+  </div>
+  <div class="title">
+  <h1>Chess Server</h1>
+  <h2>Play chess online</h2>
+  </div>
+  </header>
+
 	<p class="navbar-text pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
