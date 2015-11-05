@@ -1,17 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <% chall = Challenge.create(challenger_id: 5) %>
+  <header class="chess-head">
+  <div class="logo">
+  <%= image_tag("Chess-icon.png", size: "40") %>
+  </div>
+  <div class="title">
+  <h1>Chess Server</h1>
+  <h2>Play chess online</h2>
+  </div>
+  </header>
 
 
-
-<h1>Listing Games</h1>
+<h1>Your Current Games</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Position</th>
-      <th>Text</th>
-      <th>Result</th>
       <th>White</th>
       <th>Black</th>
       <th>white_id</th>
@@ -24,41 +29,39 @@
 
     <% current_user.all_games.each do |game| %>
       <tr>
-        <td><%= game.position %></td>
-        <td><%= game.text %></td>
-        <td><%= game.result %></td>
         <td><%= game.white %></td>
         <td><%= game.black %></td>
         <td><%= game.user_white_id %></td>
         <td><%= game.user_black_id %></td>
         <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     
       </tr>
     <% end %>
 
-        <% current_user.outgoing_challenges.each do |challenge| %>
+<table>
+
+     </tbody>
+     <tbody>
+<h1>Your Incoming Challenges</h1>
+    <% current_user.incoming_chals.each do |chal| %>
       <tr>
-        <td><%= challenge.challenger_id %></td>
-        <td><%= challenge.challenged_id %></td>
-        <td>An outgoing challenge!</td>
+          Player
       </tr>
-    <% end %>
 
-            <% current_user.incoming_challenges.each do |challenge| %>
       <tr>
-        <td><%= challenge.challenger_id %></td>
-        <td><%= challenge.challenged_id %></td>
-        <td>An incoming challenge!</td>
+        <td><%= chal.challenger %></td>
+        <td><%= link_to 'Accept Challenge', new_chal_path %></td>
       </tr>
     <% end %>
-
-
   </tbody>
 </table>
+
+ 
+
 
 <br>
 
 
 
-<%= link_to 'New Game', new_game_path %>
+
+<%= link_to 'New Challenge', new_chal_path %>

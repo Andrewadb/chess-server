@@ -1,40 +1,19 @@
+
+<div id="your_turn">
+</div>
+<br>
+
 <%= render '/chessboard' %>
 
-
-<span id="fen">
-</span>
+ <p>
+  <strong>Player White:</strong>
+  
+  <%= User.find_by_id(@game.user_white_id).email %>
 </p>
 <p>
-  <strong>Position:</strong>
-  <%= @game.position %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @game.text %>
-</p>
-
-<p>
-  <strong>Result:</strong>
-  <%= @game.result %>
-</p>
-
-<p>
-  <strong>White:</strong>
-  <%= @game.white %>
-</p>
-
-<p>
-  <strong>Black:</strong>
-  <%= @game.black %>
-</p>
-
-  <strong>White_user_id:</strong>
-  <%= @game.user_white_id %>
-</p>
-<p>
-  <strong>Black_user_id:</strong>
-  <%= @game.user_black_id %>
+  <strong>Player Black:</strong>
+  
+  <%= User.find_by_id(@game.user_black_id).email %>
 </p>
 <p>
   <strong>User color</strong>
@@ -44,9 +23,9 @@
     black
   <% end %>
 </p>
-<%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
-<%= render 'form' %>
+
+<%= render 'gform' %>
 
 <script>
 // ******************************************
@@ -55,12 +34,22 @@ var board,
   statusEl = $('#status'),
   fenEl = $('#fen'),
   pgnEl = $('#pgn');
+  turnEl = $('#your_turn');
   usersTurn = true;
   userColor = (<% if @game.user_white_id == current_user.id %>'w'<% else %>'b'<% end %>);
   userColorFull = (<% if @game.user_white_id == current_user.id %>'white'<% else %>'black'<% end %>);
 
-  var fenField = document.getElementById("game_position");
 
+  var turnMsg; 
+  if (userColor ===  game.turn() ){
+    turnMsg = 'Its your turn!';
+
+  } else {
+    turnMsg = 'Its your opponents turn';
+  }
+  
+  var fenField = document.getElementById("game_position");
+  var turnField = document.getElementById("your_turn");
 
 // do not pick up pieces if the game is over
 // only pick up pieces for the side to move
@@ -138,6 +127,7 @@ var updateStatus = function() {
   statusEl.html(status);
   fenEl.html(game.fen());
   pgnEl.html(game.pgn());
+  turnEl.html(turnMsg);
 };
 
 var cfg = {

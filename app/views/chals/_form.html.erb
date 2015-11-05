@@ -10,15 +10,9 @@
       </ul>
     </div>
   <% end %>
+  <%= f.text_field :challenger  %>
+ <%= f.select( "challenged", User.all.collect {|p| [ p.email, p.id ] }, { include_blank: true }) %>
 
-  <div class="field">
-    <%= f.label :challenger %><br>
-    <%= f.number_field :challenger %>
-  </div>
-  <div class="field">
-    <%= f.label :challenged %><br>
-    <%= f.number_field :challenged %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   has_many :outgoing_challenges, foreign_key: 'challenger_id', class_name: 'Challenge'
   has_many :incoming_challenges, foreign_key: 'challenged_id', class_name: 'Challenge'
 
+  has_many :outgoing_chals, foreign_key: 'challenger', class_name: 'Chal'
+  has_many :incoming_chals, foreign_key: 'challenged', class_name: 'Chal'
+
   def all_games
     Game.where('user_white_id = :user_id OR user_black_id = :user_id', user_id: self.id)
   end
