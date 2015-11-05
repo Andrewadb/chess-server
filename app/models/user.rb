@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
     Game.where('user_white_id = :user_id OR user_black_id = :user_id', user_id: self.id)
   end
 
+  def all_challenges
+    Challenge.where('challenger_id = :user_id OR challenged_id = :user_id', user_id: self.id)
+  end
+
   end

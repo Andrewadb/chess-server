@@ -1,0 +1,11 @@
+<%= form_for Challenge.new do |f| %>
+
+
+  <div class="actions">
+    <%= f.submit %>
+
+
+    
+ <%= f.select( "challenger_id", User.all.collect {|p| [ p.email, p.id ] }, { include_blank: true }) %>
+  </div>
+<% end %>

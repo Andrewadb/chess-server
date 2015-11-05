@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Chals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Challenger</th>
+      <th>Challenged</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chals.each do |chal| %>
+      <tr>
+        <td><%= chal.challenger %></td>
+        <td><%= chal.challenged %></td>
+        <td><%= link_to 'Show', chal %></td>
+        <td><%= link_to 'Edit', edit_chal_path(chal) %></td>
+        <td><%= link_to 'Destroy', chal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chal', new_chal_path %>

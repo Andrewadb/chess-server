@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :chals
   devise_for :users
   resources :games
   resources :users
+  resources :challenges
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -15,6 +17,8 @@ Rails.application.routes.draw do
   get 'game/show' => 'games#show'
 
   get 'game/new' => 'games#new'
+
+  get 'chal/' => 'chals#new'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

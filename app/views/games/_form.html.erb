@@ -41,5 +41,9 @@
   </div>
   <div class="actions">
     <%= f.submit %>
+
+
+    
+ <%= f.select( "id", User.all.collect {|p| [ p.email, p.id ] }, { include_blank: true }) %>
   </div>
 <% end %>

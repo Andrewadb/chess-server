@@ -1,0 +1,25 @@
+<%= form_for(@chal) do |f| %>
+  <% if @chal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chal.errors.count, "error") %> prohibited this chal from being saved:</h2>
+
+      <ul>
+      <% @chal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :challenger %><br>
+    <%= f.number_field :challenger %>
+  </div>
+  <div class="field">
+    <%= f.label :challenged %><br>
+    <%= f.number_field :challenged %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

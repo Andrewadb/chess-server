@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% chall = Challenge.create(challenger_id: 5) %>
+
+
+
 <h1>Listing Games</h1>
 
 <table>
@@ -33,6 +37,21 @@
       </tr>
     <% end %>
 
+        <% current_user.outgoing_challenges.each do |challenge| %>
+      <tr>
+        <td><%= challenge.challenger_id %></td>
+        <td><%= challenge.challenged_id %></td>
+        <td>An outgoing challenge!</td>
+      </tr>
+    <% end %>
+
+            <% current_user.incoming_challenges.each do |challenge| %>
+      <tr>
+        <td><%= challenge.challenger_id %></td>
+        <td><%= challenge.challenged_id %></td>
+        <td>An incoming challenge!</td>
+      </tr>
+    <% end %>
 
 
   </tbody>
