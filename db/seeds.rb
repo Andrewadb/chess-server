@@ -1,7 +1,90 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create!([
+  {name: nil, password: nil, email: "fred@ga.com", encrypted_password: "$2a$10$DgK9eQEv698kNNgiWvun1.D1hapL1aN0kvvE1yRSPnXsOAd9YTVa2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil},
+  {name: nil, password: nil, email: "judit@ga.com", encrypted_password: "$2a$10$pLF7rmnrKuJQ40nZahQVEuodd3RtkYWB/jC5qVC43tYfJQwWbzX22", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 13, current_sign_in_at: "2015-11-05 20:56:09", last_sign_in_at: "2015-11-05 20:52:16", current_sign_in_ip: "::1", last_sign_in_ip: "::1"},
+  {name: nil, password: nil, email: "emanual@ga.com", encrypted_password: "$2a$10$SdDq2bnMPeq88c8LilTOFeqVtqQOf2nCOnetkhFo2VRElbCRawRom", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-11-03 06:14:14", last_sign_in_at: "2015-11-03 06:14:14", current_sign_in_ip: "::1", last_sign_in_ip: "::1"},
+  {name: nil, password: nil, email: "alex@ga.com", encrypted_password: "$2a$10$5dRJwBe7irw7h6jDcmnziuIFLLGotZFtTKh2hAoFu2ZC1MsPQVykS", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-11-03 20:25:32", last_sign_in_at: "2015-11-03 20:25:32", current_sign_in_ip: "::1", last_sign_in_ip: "::1"},
+  {name: nil, password: nil, email: "jose@ga.com", encrypted_password: "$2a$10$/wEDlRu0M2ecpmbNdo.98ed2ITLqCj7PYpGdXAN6GXknIG490iCPK", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 11, current_sign_in_at: "2015-11-05 23:20:04", last_sign_in_at: "2015-11-05 04:29:52", current_sign_in_ip: "::1", last_sign_in_ip: "::1"},
+  {name: nil, password: nil, email: "misha@ga.com", encrypted_password: "$2a$10$iTeedLXsw2PYk0q0Ao0F6OYk0Jb2xUqi0S3wHcgnPCgIG4aKsuiKm", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2015-11-05 23:55:03", last_sign_in_at: "2015-11-05 23:40:15", current_sign_in_ip: "::1", last_sign_in_ip: "::1"},
+  {name: nil, password: nil, email: "vishy@ga.com", encrypted_password: "$2a$10$e/BztS1Zjmclxjuh9Jds1e0v44vAZnDaGIVF9UpGRP6lHSwVM51lW", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2015-11-04 00:00:18", last_sign_in_at: "2015-11-03 21:17:30", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
+])
+Chal.create!([
+  {challenger: 9, challenged: 6},
+  {challenger: nil, challenged: 10},
+  {challenger: nil, challenged: 9},
+  {challenger: nil, challenged: 8}
+])
+Challenge.create!([
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil},
+  {challenger: nil, user_id: nil, challenged: nil, challenger_id: 5, challenged_id: nil}
+])
+Game.create!([
+  {position: "start", text: "asdfg", result: "*", white: "player7", black: "player8", user_id: nil, user_white_id: 7, user_black_id: 8},
+  {position: "start", text: "mishas game", result: "*", white: "misha", black: "jose", user_id: nil, user_white_id: 11, user_black_id: 10},
+  {position: nil, text: nil, result: nil, white: "fred", black: "barney", user_id: nil, user_white_id: nil, user_black_id: nil},
+  {position: "7k/8/R7/8/8/8/8/7K b - - 1 1", text: "gg", result: "*", white: "jose", black: "juid", user_id: nil, user_white_id: 10, user_black_id: 11},
+  {position: "rnbqkb1r/pp3ppp/4pn2/2p3B1/2B1P3/2N5/PP3PPP/R4RK1 b kq - 0 10", text: "funky game", result: "*", white: "Judit", black: "Jose", user_id: nil, user_white_id: 9, user_black_id: 10}
+])
